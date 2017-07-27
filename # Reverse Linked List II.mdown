@@ -1,0 +1,8 @@
+# Reverse Linked List II
+
+Example
+Given 1->2->3->4->5->NULL, m = 2 and n = 4, return 1->4->3->2->5->NULL.
+
+Tips: head may change during the reverse or rotation, the best way is always to have a dummy node linked to the original head, and start from the dummy node.
+
+One pass solution is important!
