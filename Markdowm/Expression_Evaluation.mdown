@@ -1,0 +1,10 @@
+# LintCode Expression Evaluation
+
+
+## Complexity Analysis
+
+Time: O(n)  Space: O(n)
+
+## Tips:
+
+The key for this question is how to maintain the element in this stack. 
