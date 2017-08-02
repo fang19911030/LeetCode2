@@ -1,0 +1,15 @@
+# 627 Longest Palindrome
+
+Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.
+
+This is case sensitive, for example "Aa" is not considered a palindrome here.
+
+
+Tips: 
+
+对于有奇数个的字母 其中偶数的部分 可以加到回文串中 最后在加个1 如果有这种字母
+
+
+# Time cost:
+
+O(n)
