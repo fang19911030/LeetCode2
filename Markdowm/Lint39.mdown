@@ -1,0 +1,8 @@
+# Recover Rotated Sorted Array
+
+Given a rotated sorted array, recover it to sorted array in-place.
+
+
+## Tips:
+
+Collections.rotate(list, distance)  distance: is calculated from the tail.
