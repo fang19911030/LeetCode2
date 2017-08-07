@@ -1,0 +1,7 @@
+# Number of Airplanes in the Sky
+
+Given an interval list which are flying and landing time of the flight. How many airplanes are on the sky at most?
+
+# Tips:
+
+The way of deal time interval is very interesting. A new kind question.
