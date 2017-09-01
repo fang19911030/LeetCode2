@@ -1,0 +1,3 @@
+# 148 Sort List
+
+two pointer: slow & quick pointer when quick touch null, slow will be at the head of right part list.
