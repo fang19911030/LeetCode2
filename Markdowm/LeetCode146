@@ -1,0 +1,3 @@
+# LeetCode 146 LRU Cache
+
+the key point for this project is the double link linkedlist,  only when we remove node before tail, we need to update the key in the map. The map stores data.key and linkedlist node.
