@@ -83,4 +83,24 @@ class Solution {
         }
         return node;
     }
+    public TreeNode constructMaximumBinaryTree(int[] nums) {
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        for(int i=0;i<nums.length;i++){
+            TreeNode cur = new TreeNode(nums[i]);
+            while(!stack.isEmpty() && stack.peek().val <cur.val){
+                cur.left = stack.peek();
+                stack.pop();
+            }
+            if(!stack.isEmpty()){
+                stack.peek().right = cur;
+            }
+            stack.push(cur);
+        }
+        if(stack.size()>1){
+            while(stack.size()>1){
+                stack.pop();
+            }
+        }
+        return stack.pop();
+    }
 }
