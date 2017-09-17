@@ -49,4 +49,30 @@ class Solution {
         }
         return sum;
     }
+
+    public int maximumSwap2(int num) {
+        if(num<10){
+            return num;
+        }
+        
+        List<Integer> digits = getDigit(num);
+        if(isIncreased(digits)){
+            return num;
+        }else{
+            int leftSmall = 0;
+            int rightMax = 0;            
+            int[] rightMaxs = getRightMax(digits);
+            //System.out.println(Arrays.toString(rightMaxs));
+            for(int i=digits.size()-1;i>0;i--){
+                rightMax = rightMaxs[i];
+                leftSmall = i;
+                if(digits.get(rightMax)> digits.get(i)){
+                    break;
+                }
+            }
+            Collections.swap(digits,leftSmall, rightMax);
+        }
+        int res = convertToNum(digits);
+        return res;
+    }
 }
