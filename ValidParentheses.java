@@ -34,4 +34,36 @@ public class Solution {
         }
         return true;
     }
+    public boolean isValid(String s) {
+        if(s == null || s.length() == 0){
+            return true ;
+        }
+        Deque<Character> stack = new ArrayDeque<>();
+        char[] arr = s.toCharArray();
+        Set<Character>set = new HashSet<>();
+        set.add('(');
+        set.add('[');
+        set.add('{');
+        for(int i=0;i<arr.length;i++){
+            char cur = arr[i];
+            if(set.contains(cur)){
+                stack.push(cur);
+            }else{
+                if(stack.isEmpty()){
+                    return false;
+                }else{
+                    if(cur == ']' && stack.peek()=='['){
+                        stack.pop();
+                    }else if(cur == '}' && stack.peek()=='{'){
+                        stack.pop();
+                    }else if(cur ==')' && stack.peek() == '('){
+                        stack.pop();
+                    }else{
+                        return false;
+                    }
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
 }
