@@ -44,3 +44,23 @@ class Solution {
         return max+val;
     }
 }
+
+class Solution {
+    public int maxPathSum(TreeNode root) {
+        if (root == null){
+            return 0;
+        }
+        int[] res = new int[1];
+        res[0] = Integer.MIN_VALUE;
+        maxPathDown(root, res);
+        return res[0];
+    }
+    
+    private int maxPathDown(TreeNode node, int[] res){
+        if(node == null) return 0;
+        int left = Math.max(0, maxPathDown(node.left,res));
+        int right = Math.max(0, maxPathDown(node.right, res));
+        res[0] = Math.max(res[0], left + right+node.val);
+        return Math.max(left,right) + node.val;
+    }
+}
