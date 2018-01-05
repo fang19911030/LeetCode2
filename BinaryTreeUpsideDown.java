@@ -37,3 +37,39 @@ class Solution {
     }
     
 }
+
+class Solution {
+    public TreeNode upsideDownBinaryTree(TreeNode root) {
+        if(root == null || root.left == null){
+            return root;
+        }
+        
+        TreeNode newRoot = upsideDownBinaryTree(root.left);
+        root.left.left = root.right;
+        root.left.right = root;
+        root.left = null;
+        root.right = null;
+        return newRoot;
+    }
+}
+
+class Solution {
+    public TreeNode upsideDownBinaryTree(TreeNode root) {
+        TreeNode cur = root;
+        TreeNode nxt = null;
+        TreeNode temp = null;
+        TreeNode prev = null;
+        while(cur != null){
+            next = cur.left;
+            
+            cur.left = temp;
+            temp = cur.right;
+            cur.right = prev;
+            
+            prev = cur;
+            cur = nxt;
+            
+        }
+        return prev;
+    }
+}
